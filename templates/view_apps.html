@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>View All Web Applications</title>
+</head>
+<body>
+<h1>View All Web Applications</h1>
+<table>
+<thead>
+<tr>
+<th>Application Name</th>
+<th>Application Description</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{% for app in apps %}
+<tr>
+<td>{{ app.app_name }}</td>
+<td>{{ app.app_description }}</td>
+<td>
+<a href="/edit_app/{{ app.app_id }}">Edit</a> |
+<a href="/delete_app/{{ app.app_id }}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>
+
+
